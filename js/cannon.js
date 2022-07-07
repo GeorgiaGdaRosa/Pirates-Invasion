@@ -11,10 +11,21 @@ class Cannon{
 
   display(){
     
+    //movimento do canhao
+    if(keyIsDown(RIGHT_ARROW)&& this.angle<72){
+      this.angle+= 1 
+    }
+
+    if(keyIsDown(LEFT_ARROW)&& this.angle>-36){
+      this.angle--
+    }
+
     // cano do canhao
     push()
+    translate(this.x,this.y)
+    rotate(this.angle)
     imageMode(CENTER) 
-    image(this.canonImg,this.x,this.y,this.w,this.h)
+    image(this.canonImg,0,0,this.w,this.h)
     pop()
 
     // base do canhao
